@@ -26,9 +26,9 @@ app.use((req, res, next)=>{
     next();
 });
 
-app.use((req, res, next)=>{
-    res.render('maintenance');
-});
+// app.use((req, res, next)=>{
+//     res.render('maintenance');
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -38,6 +38,12 @@ app.get('/', (req, res)=>{
     res.render('home', {
         pageTitle: "Home Page!",
         welcomeMessage: 'Welcome to home!'
+    });
+});
+
+app.get('/projects', (req, res)=>{
+    res.render('projects',{
+        pageTitle: "Projects"
     });
 });
 
